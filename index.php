@@ -12,8 +12,3 @@ $config = require ('config.php');
 
    $posts = $db->query($query,[':id' => $id])->fetch();
 
-
-
-
-
-
