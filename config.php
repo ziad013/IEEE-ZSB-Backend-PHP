@@ -1,11 +1,10 @@
 <?php
 
-
-return  [
+return [
     'database' => [
-    'host' => 'localhost',
-    'port' => '3306',
-    'dbname' => 'myapp',
-    'charset' => 'utf8mb4'
-        ]
+        'host' => 'localhost',
+        'port' => 3306,
+        'dbname' => 'myapp',
+        'charset' => 'utf8mb4'
+    ],
 ];
