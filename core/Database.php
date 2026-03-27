@@ -1,13 +1,14 @@
 <?php
 
-class Database
-{
+namespace Core;
 
+use PDO;
+
+class Database {
     public $connection;
     public $statement;
 
-    public function __construct($config, $username = 'root', $password = '')
-    {
+    public function __construct($config, $username= 'root', $password= '123') {
         $dsn = 'mysql:' . http_build_query($config, '', ';');
 
         $this->connection = new PDO($dsn, $username, $password, [
@@ -15,32 +16,27 @@ class Database
         ]);
     }
 
-    public function query($query, $params = [])
-    {
+    public function query($query, $params= []) {
         $this->statement = $this->connection->prepare($query);
-
         $this->statement->execute($params);
 
         return $this;
     }
 
-    public function findALl()
-    {
+    public function get() {
         return $this->statement->fetchAll();
     }
 
-    public function find()
-    {
+    public function find() {
         return $this->statement->fetch();
     }
 
-    public function findOrFail()
-    {
+    public function findOrFail() {
         $result = $this->find();
-
-        if (!$result) {
+        if (! $result) {
             abort();
         }
+
         return $result;
     }
 }
