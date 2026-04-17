@@ -13,14 +13,17 @@ car1.speed = 120;
 
 ---------------------------------------------------------------------------------
 2-$this vs. self:: :
+
 self:
 -Refer to current class
 -Access static members
 -Not use ($) because its not represent a variable But present class constructoin
+
 this:
+
 -Refer to current object
 -Access not static members
--Not use ($) because its represent a variable 
+-use ($) because its represent a variable 
 
 ----------------------------------------------------------------------
 3-Access Modifiers (Encapsulation):
