@@ -56,21 +56,7 @@ Why is it considered a terrible idea to put database queries (SQL) directly insi
 
 Mixing them together makes the code messy and hard to manage
 
-like this
-
-<h1>Users</h1>
-
-<?php
-$conn = mysqli_connect(...);
-
-$result = mysqli_query($conn, "SELECT * FROM users");
-
-while($row = mysqli_fetch_assoc($result)) {
-    echo $row['name'];
-}
-?>
-
-become bad because
+It become bad because
 1-Hard to Maintain and read
 2-Less Secure
 
